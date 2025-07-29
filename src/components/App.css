@@ -1,0 +1,44 @@
+body, .bg-dark, .bg-light {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.navbar-word {
+  font-size: 18px;
+  color: rgb(11, 14, 113);
+  font-weight: bold;
+  text-shadow:
+    0 0 5px aqua,
+    0 0 10px aqua,
+    0 0 15px aqua;
+  transition: text-shadow 0.3s ease-in-out;
+}
+
+.navbar-word:hover {
+  text-shadow:
+    0 0 10px aqua,
+    0 0 20px aqua,
+    0 0 30px aqua;
+}
+
+/* Color of Alert  */
+
+.alert-success {
+  background-color: #28a745 !important; /* or any green you prefer */
+  color: white !important;
+}
+
+.alert-info {
+  background-color: #17a2b8 !important;
+  color: white !important;
+}
+@media (max-width: 576px) {
+  textarea {
+    font-size: 14px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 0.4rem 0.75rem;
+  }
+
+
+}
