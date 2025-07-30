@@ -124,7 +124,7 @@ export default function TextForm({ darkMode, showAlert }) {
         <div className="row">
           <div className="col-12 col-md-10 mx-auto">
             <h3>Your Text Summary</h3>
-            <p>{text.split(" ").filter((element) =>{return element.length!=0}).length} words and {text.length} characters</p>
+            <p>{text.split(" ").filter((element) =>{return element.length!==0}).length} words and {text.length} characters</p>
             <p>{(0.008 * text.trim().split(/\s+/).length).toFixed(2)} Minutes read</p>
             <h3>Preview</h3>
             <p>{text}</p>

@@ -42,3 +42,26 @@ body, .bg-dark, .bg-light {
 
 
 }
+.alert-fixed {
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1050;
+  width: auto;
+  max-width: 90%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 📱 Responsive adjustment for small screens */
+@media (max-width: 576px) {
+  .alert-fixed {
+    top: 20px;
+    font-size: 0.9rem;
+    padding: 0.5rem 0.75rem;
+    max-width: 95%;
+  }
+}
+
