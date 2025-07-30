@@ -95,25 +95,25 @@ export default function TextForm({ darkMode, showAlert }) {
 
             <div className="row g-2 mb-3">
               <div className="col-6 col-md-3">
-                <button className="btn btn-primary w-100" onClick={handleUpClick}>Uppercase</button>
+                <button disabled={text.length===0} className="btn btn-primary w-100" onClick={handleUpClick}>Uppercase</button>
               </div>
               <div className="col-6 col-md-3">
-                <button className="btn btn-primary w-100" onClick={handleLoClick}>Lowercase</button>
+                <button disabled={text.length===0} className="btn btn-primary w-100" onClick={handleLoClick}>Lowercase</button>
               </div>
               <div className="col-6 col-md-3">
-                <button className="btn btn-primary w-100" onClick={handleCopy}>Copy</button>
+                <button disabled={text.length===0} className="btn btn-primary w-100" onClick={handleCopy}>Copy</button>
               </div>
               <div className="col-6 col-md-3">
-                <button className="btn btn-primary w-100" onClick={handleExtraSpaces}>Remove Spaces</button>
+                <button disabled={text.length===0} className="btn btn-primary w-100" onClick={handleExtraSpaces}>Remove Spaces</button>
               </div>
               <div className="col-6 col-md-3">
-                <button className="btn btn-primary w-100" onClick={handleSummarizeText}>Summarize</button>
+                <button disabled={text.length===0} className="btn btn-primary w-100" onClick={handleSummarizeText}>Summarize</button>
               </div>
               <div className="col-6 col-md-3">
-                <button className="btn btn-secondary w-100" onClick={handleClearClick}>Clear</button>
+                <button disabled={text.length===0} className="btn btn-secondary w-100" onClick={handleClearClick}>Clear</button>
               </div>
               <div className="col-12 col-md-6">
-                <button className="btn btn-success w-100" onClick={handleCorrection}>Correct Grammar</button>
+                <button disabled={text.length===0} className="btn btn-success w-100" onClick={handleCorrection}>Correct Grammar</button>
               </div>
             </div>
           </div>
@@ -125,9 +125,9 @@ export default function TextForm({ darkMode, showAlert }) {
           <div className="col-12 col-md-10 mx-auto">
             <h3>Your Text Summary</h3>
             <p>{text.split(" ").filter((element) =>{return element.length!==0}).length} words and {text.length} characters</p>
-            <p>{(0.008 * text.trim().split(/\s+/).length).toFixed(2)} Minutes read</p>
+            <p>{(0.008 * text.trim().split(/\s+/).filter((element) =>{return element.length!==0}).length).toFixed(2)} Minutes read</p>
             <h3>Preview</h3>
-            <p>{text}</p>
+            <p>{text.length>0?text:"Nothing to Preview !"}</p>
 
             {correctedText && (
               <>
